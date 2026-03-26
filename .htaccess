@@ -1,0 +1,17 @@
+# Disable directory listing
+Options -Indexes
+
+# Protect config file (database credentials)
+<Files "config.php">
+    Require all denied
+</Files>
+
+# Protect SQL files
+<FilesMatch "\.sql$">
+    Require all denied
+</FilesMatch>
+
+# Protect hidden files (like .htaccess)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
